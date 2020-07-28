@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"optisam-backend/account-service/pkg/cmd"
 	"os"
 )
 

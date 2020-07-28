@@ -3,8 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-
-	"optisam-backend/account-service/pkg/cmd"
 )
 
 //go:generate protoc --proto_path=../../api/proto/v1 --proto_path=../../../common/third_party --go_out=plugins=grpc:../../pkg/api/v1 account.proto

@@ -103,15 +103,15 @@ func request_AccountService_UpdateAccount_1(ctx context.Context, marshaler runti
 	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq.Account); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if protoReq.UpdateMask != nil && len(protoReq.UpdateMask.GetPaths()) > 0 {
-		runtime.CamelCaseFieldMask(protoReq.UpdateMask)
-	} else {
-		if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader()); err != nil {
-			return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-		} else {
-			protoReq.UpdateMask = fieldMask
-		}
-	}
+	//if protoReq.UpdateMask != nil && len(protoReq.UpdateMask.GetPaths()) > 0 {
+	//	runtime.CamelCaseFieldMask(protoReq.UpdateMask)
+	//} else {
+	//	if fieldMask, err := runtime.FieldMaskFromRequestBody(newReader()); err != nil {
+	//		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	//	} else {
+	//		protoReq.UpdateMask = fieldMask
+	//	}
+	//}
 
 	var (
 		val string

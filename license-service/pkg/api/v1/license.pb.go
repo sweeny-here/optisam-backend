@@ -7,7 +7,7 @@ import proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
 import math "math"
 import _ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
-import _ "github.com/lyft/protoc-gen-validate/validate"
+import _ "github.com/envoyproxy/protoc-gen-validate/validate"
 import _ "google.golang.org/genproto/googleapis/api/annotations"
 
 import (

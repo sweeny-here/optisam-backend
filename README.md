@@ -15,6 +15,14 @@ __OPTISAM__ (Optimized tool for inventive Software Asset Management) is a tool f
 $ git clone https://github.com/Orange-OpenSource/optisam-backend.git
 ```
 
+### Pre-Build
+
+* Ensure all Go modules are valid, in the root directory run commands:
+```
+go clean -modcache && go clean -cache
+go mod tidy
+```
+
 ### Build
 
 ##### - Change configuration file
@@ -24,6 +32,7 @@ $ git clone https://github.com/Orange-OpenSource/optisam-backend.git
 
 ```
 cd ${service-name}/cmd/server
+export CGO_ENABLED=0 GOOS=linux GOARCH=amd64 && go build
 docker build --pull -t optisam/${service-name}-service:latest -f Dockerfile .
 docker push optisam/${service-name}-service:latest
 ```
